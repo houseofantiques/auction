@@ -1,0 +1,359 @@
+/* =========================
+   HOA Auction — style.css
+   Identity: Elegant / Museum / Baghdad heritage
+   - Dark + Antique gold + subtle royal blue
+   - Big buttons & readable typography (elder-friendly)
+========================= */
+
+:root{
+  --bg: #07080b;
+  --panel: rgba(18, 20, 27, 0.78);
+  --panel2: rgba(10, 12, 17, 0.72);
+  --stroke: rgba(255,255,255,0.10);
+
+  --gold: #d6b25e;
+  --gold2:#b8923a;
+  --ivory:#f2ede0;
+
+  --blue:#2f5aa6;
+  --red:#c43a3a;
+
+  --text:#e9e6df;
+  --muted: rgba(233, 230, 223, 0.68);
+
+  --shadow: 0 20px 60px rgba(0,0,0,.55);
+  --radius: 18px;
+
+  --btnH: 58px;      /* زر كبير للكبار */
+  --h1: clamp(22px, 2.3vw, 34px);
+  --h2: clamp(18px, 2vw, 26px);
+  --p:  clamp(15px, 1.4vw, 18px);
+}
+
+/* Reset */
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  font-family: "Cairo", system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+  color:var(--text);
+  background: radial-gradient(1200px 800px at 20% 10%, rgba(214,178,94,.12), transparent 55%),
+              radial-gradient(900px 600px at 80% 30%, rgba(47,90,166,.10), transparent 60%),
+              linear-gradient(180deg, #04050a, #0a0b10 55%, #05060a);
+}
+
+/* Subtle texture */
+body:before{
+  content:"";
+  position:fixed; inset:0;
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(255,255,255,.05) 1px, transparent 0);
+  background-size: 32px 32px;
+  opacity:.18;
+  pointer-events:none;
+}
+
+/* Layout */
+.page{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px 16px 46px;
+}
+
+.header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding: 12px 14px;
+  border: 1px solid var(--stroke);
+  background: linear-gradient(180deg, rgba(18,20,27,.72), rgba(10,12,17,.62));
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 10px;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-width: 0;
+}
+.brandMark{
+  width: 42px; height: 42px;
+  border-radius: 14px;
+  border: 1px solid rgba(214,178,94,.35);
+  background:
+    radial-gradient(14px 14px at 30% 30%, rgba(214,178,94,.55), transparent 70%),
+    radial-gradient(24px 24px at 70% 60%, rgba(47,90,166,.22), transparent 70%),
+    rgba(0,0,0,.25);
+  box-shadow: 0 12px 28px rgba(0,0,0,.55);
+}
+.brandText{
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+  min-width:0;
+}
+.brandText .title{
+  font-weight: 800;
+  letter-spacing: .2px;
+  font-size: 16px;
+  color: var(--ivory);
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.brandText .sub{
+  font-size: 12px;
+  color: var(--muted);
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(214,178,94,.25);
+  background: rgba(214,178,94,.10);
+  color: var(--ivory);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.card{
+  border-radius: var(--radius);
+  border: 1px solid var(--stroke);
+  background: linear-gradient(180deg, rgba(18,20,27,.78), rgba(10,12,17,.70));
+  box-shadow: var(--shadow);
+  overflow:hidden;
+  backdrop-filter: blur(10px);
+}
+
+.cardPad{ padding: 18px; }
+
+.h1{ font-size: var(--h1); margin: 0 0 10px; font-weight: 900; color: var(--ivory); }
+.h2{ font-size: var(--h2); margin: 0 0 8px; font-weight: 800; color: var(--ivory); }
+.p{ font-size: var(--p); color: var(--muted); margin:0; line-height:1.65; }
+
+.hr{
+  height:1px;
+  background: rgba(255,255,255,.10);
+  margin: 14px 0;
+}
+
+/* Forms */
+.field{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  margin: 12px 0;
+}
+.label{
+  font-size: 13px;
+  color: var(--muted);
+}
+.input{
+  height: 54px;
+  padding: 0 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(0,0,0,.28);
+  color: var(--text);
+  outline: none;
+  font-size: 16px;
+}
+.input:focus{
+  border-color: rgba(214,178,94,.45);
+  box-shadow: 0 0 0 4px rgba(214,178,94,.12);
+}
+
+/* Buttons (elder-friendly) */
+.btn{
+  height: var(--btnH);
+  padding: 0 18px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+  color: var(--text);
+  font-weight: 900;
+  font-size: 16px;
+  cursor:pointer;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  user-select:none;
+}
+.btn:hover{ background: rgba(255,255,255,.09); }
+.btn:active{ transform: translateY(1px); }
+
+.btnGold{
+  border-color: rgba(214,178,94,.45);
+  background: linear-gradient(180deg, rgba(214,178,94,.24), rgba(214,178,94,.12));
+  color: var(--ivory);
+}
+.btnGold:hover{ background: linear-gradient(180deg, rgba(214,178,94,.30), rgba(214,178,94,.14)); }
+
+.btnBlue{
+  border-color: rgba(47,90,166,.55);
+  background: linear-gradient(180deg, rgba(47,90,166,.25), rgba(47,90,166,.12));
+}
+.btnDanger{
+  border-color: rgba(196,58,58,.55);
+  background: linear-gradient(180deg, rgba(196,58,58,.22), rgba(196,58,58,.10));
+}
+
+.btnFull{ width:100%; }
+
+/* Auction layout: video + bid panel */
+.liveGrid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 14px;
+}
+@media (max-width: 900px){
+  .liveGrid{ grid-template-columns: 1fr; }
+  .header{ position:static; }
+}
+
+/* Video frame */
+.videoWrap{
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius);
+  border:1px solid var(--stroke);
+  overflow:hidden;
+  background:#000;
+  box-shadow: var(--shadow);
+}
+.videoWrap iframe{
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+/* Item panel */
+.itemTop{
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+}
+.itemImg{
+  width: 180px;
+  aspect-ratio: 4/3;
+  border-radius: 16px;
+  border:1px solid rgba(214,178,94,.20);
+  overflow:hidden;
+  background: rgba(0,0,0,.30);
+  flex: 0 0 auto;
+}
+.itemImg img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  display:block;
+}
+.itemMeta{ flex:1; min-width:0; }
+
+.kv{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 10px;
+}
+.kvBox{
+  border-radius: 16px;
+  border:1px solid rgba(255,255,255,.10);
+  background: rgba(0,0,0,.22);
+  padding: 12px;
+}
+.kvBox .k{ font-size: 12px; color: var(--muted); }
+.kvBox .v{ font-size: 20px; font-weight: 900; color: var(--ivory); margin-top: 4px; }
+
+.bigPrice{
+  font-size: 34px;
+  font-weight: 1000;
+  color: var(--ivory);
+  letter-spacing: .3px;
+}
+.muted{ color: var(--muted); }
+
+.timer{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  height: 44px;
+  padding: 0 14px;
+  border-radius: 14px;
+  border:1px solid rgba(214,178,94,.25);
+  background: rgba(214,178,94,.10);
+  font-weight: 1000;
+  color: var(--ivory);
+}
+
+.table{
+  width:100%;
+  border-collapse: collapse;
+  overflow:hidden;
+  border-radius: 16px;
+  border:1px solid rgba(255,255,255,.10);
+}
+.table th, .table td{
+  padding: 12px 10px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  text-align:right;
+  font-size: 14px;
+}
+.table th{ color: var(--muted); font-weight: 800; background: rgba(255,255,255,.04); }
+.table tr:last-child td{ border-bottom: 0; }
+
+/* Display mode (big screen) */
+.displayWrap{
+  height: 100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 18px;
+}
+.displayCard{
+  width: min(1100px, 100%);
+  border-radius: 28px;
+  border: 1px solid rgba(214,178,94,.30);
+  background: linear-gradient(180deg, rgba(18,20,27,.86), rgba(10,12,17,.78));
+  box-shadow: var(--shadow);
+  padding: 26px;
+}
+.displayTitle{
+  font-size: 40px;
+  font-weight: 1000;
+  color: var(--ivory);
+  margin: 0 0 10px;
+}
+.displayPrice{
+  font-size: 64px;
+  font-weight: 1100;
+  color: var(--ivory);
+  margin: 8px 0 14px;
+}
+.displayRow{
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.displayPill{
+  padding: 12px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.06);
+  font-weight: 900;
+  font-size: 18px;
+}
+.displayPill strong{ color: var(--gold); }

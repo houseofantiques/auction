@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>بيت التحفيات | شاشة العرض</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="displayWrap">
+  <div class="displayCard">
+    <div class="displayRow" style="justify-content:space-between; align-items:center;">
+      <div class="displayPill"><strong>بيت التحفيات</strong> — شاشة المزاد</div>
+      <div class="displayPill">الوقت: <strong id="dTimer">--:--</strong></div>
+    </div>
+
+    <div style="margin-top:16px;">
+      <div class="displayTitle" id="dTitle">لم يبدأ المزاد بعد</div>
+      <div class="displayPrice" id="dPrice">—</div>
+
+      <div class="displayRow" style="margin-top:10px;">
+        <div class="displayPill">آخر مزايد: <strong id="dLast">—</strong></div>
+        <div class="displayPill">قيمة الزيادة: <strong id="dInc">—</strong></div>
+        <div class="displayPill">قطعة رقم: <strong id="dNo">—</strong></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="brand.js"></script>
+<script src="items.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

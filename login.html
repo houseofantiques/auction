@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>بيت التحفيات | تسجيل الدخول للمزاد</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800;900&display=swap" rel="stylesheet">
+  
+</head>
+
+<body>
+
+  <div class="page">
+
+    <!-- Header -->
+    <div class="header">
+      <div class="brand">
+        <div class="brandMark"></div>
+        <div class="brandText">
+          <div class="title">بيت التحفيات</div>
+          <div class="sub">المزاد الأونلاين المباشر</div>
+        </div>
+      </div>
+
+      <span class="badge">تسجيل الدخول</span>
+      <button id="quickBtn" class="btn btnFull" style="margin-top:10px;">
+        دخول سريع (بدون كتابة)
+       </button>
+
+    </div>
+
+    <!-- Card -->
+    <div class="card cardPad" style="max-width:520px; margin:40px auto 0;">
+
+      <h1 class="h1">الدخول إلى المزاد</h1>
+      <p class="p">
+        يرجى إدخال الاسم ورقم الهاتف للمشاركة في المزايدة المباشرة.
+      </p>
+
+      <div class="hr"></div>
+
+      <div class="field">
+        <label class="label">الاسم الكامل</label>
+        <input id="nameInput" class="input" type="text" placeholder="مثال: أحمد حسن">
+      </div>
+
+      <div class="field">
+        <label class="label">رقم الهاتف</label>
+        <input id="phoneInput" class="input" type="tel" placeholder="07xxxxxxxx">
+      </div>
+
+      <button id="loginBtn" class="btn btnGold btnFull">
+        دخول إلى المزاد
+      </button>
+
+      <p id="errorMsg" class="p" style="color:#c43a3a; display:none; margin-top:12px;">
+        يرجى إدخال الاسم ورقم الهاتف.
+      </p>
+
+    </div>
+
+  </div>
+
+  <!-- JS -->
+<script src="brand.js"></script>
+<script src="script.js"></script>
+</body>
+</body>
+</html>
