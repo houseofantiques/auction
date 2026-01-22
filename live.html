@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>بيت التحفيات | البث المباشر</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800;900&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+<div class="page">
+
+  <div class="header">
+    <div class="brand">
+      <div class="brandMark"></div>
+      <div class="brandText">
+        <div class="title">بيت التحفيات</div>
+        <div class="sub">البث المباشر — المزايدة الأونلاين</div>
+      </div>
+    </div>
+
+    <span id="paddleBadge" class="badge"></span>
+  </div>
+
+  <div class="liveGrid">
+
+    <!-- Video -->
+    <div class="card cardPad">
+      <h2 class="h2">البث المباشر</h2>
+      <div class="hr"></div>
+
+      <div class="videoWrap">
+        <iframe id="ytFrame" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+
+      <p class="p" style="margin-top:12px;">
+        إذا لم يعمل البث، حدّث الصفحة أو تأكدي من رابط البث في لوحة التحكم.
+      </p>
+    </div>
+
+    <!-- Bid panel -->
+    <div class="card cardPad">
+      <div style="display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap;">
+        <h2 class="h2" style="margin:0;">القطعة الحالية</h2>
+        <span id="liveTimer" class="timer">--:--</span>
+      </div>
+
+      <div class="hr"></div>
+
+      <div id="liveEmpty" class="card cardPad" style="display:none; background:rgba(0,0,0,.18);">
+        <h3 class="h2">لم يبدأ المزاد بعد</h3>
+        <p class="p">يرجى الانتظار… سيتم عرض القطعة تلقائياً عند بدء الإدارة.</p>
+      </div>
+
+      <div id="liveWrap" style="display:none;">
+        <div class="itemTop">
+          <div class="itemImg">
+            <img id="liveImg" src="" alt="">
+          </div>
+
+          <div class="itemMeta">
+            <div class="badge" id="liveItemNo" style="display:inline-flex; margin-bottom:10px;">قطعة رقم —</div>
+            <h1 class="h1" id="liveTitle" style="margin:0 0 10px;">—</h1>
+
+            <div class="kv">
+              <div class="kvBox">
+                <div class="k">السعر الحالي</div>
+                <div class="v" id="livePrice">—</div>
+              </div>
+              <div class="kvBox">
+                <div class="k">قيمة الزيادة</div>
+                <div class="v" id="liveInc">—</div>
+              </div>
+            </div>
+
+            <div class="hr"></div>
+
+            <p class="p">
+              آخر مزايد: <strong id="liveLast">—</strong>
+            </p>
+
+            <button id="bidBtn" class="btn btnGold btnFull" style="margin-top:12px;">
+              زايد الآن
+            </button>
+
+            <p class="p" style="margin-top:10px; color:rgba(233,230,223,.72)">
+              سيتم احتساب المزايدات المسجلة داخل النظام فقط.
+            </p>
+          </div>
+        </div>
+
+        <div class="hr"></div>
+
+        <h3 class="h2">آخر المزايدات</h3>
+        <table class="table" style="margin-top:10px;">
+          <thead>
+            <tr>
+              <th>الوقت</th>
+              <th>المبلغ</th>
+              <th>المزايد</th>
+            </tr>
+          </thead>
+          <tbody id="bidsTbody">
+            <tr><td colspan="3" class="muted">لا توجد مزايدات بعد.</td></tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="brand.js"></script>
+<script src="items.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

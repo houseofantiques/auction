@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>بيت التحفيات | إدارة المزاد</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800;900&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+<div class="page">
+
+  <div class="header">
+    <div class="brand">
+      <div class="brandMark"></div>
+      <div class="brandText">
+        <div class="title">بيت التحفيات</div>
+        <div class="sub">لوحة التحكم — إدارة القطعة الحالية</div>
+      </div>
+    </div>
+
+    <span class="badge">ADMIN</span>
+  </div>
+
+  <div class="card cardPad" style="margin-top:16px;">
+    <h1 class="h1">إدارة المزاد</h1>
+    <p class="p">هذه الصفحة للتحكم بالقطعة الحالية والوقت والسعر. لا تشاركي الرابط مع الجمهور.</p>
+  </div>
+
+  <div class="liveGrid" style="margin-top:14px;">
+
+    <div class="card cardPad">
+      <h2 class="h2">إعدادات البث</h2>
+      <div class="hr"></div>
+
+      <div class="field">
+        <label class="label">رابط YouTube Embed</label>
+        <input id="ytInput" class="input" type="text" placeholder="https://www.youtube.com/embed/VIDEO_ID?autoplay=1&mute=1&rel=0">
+      </div>
+
+      <button id="saveYtBtn" class="btn btnBlue btnFull">حفظ رابط البث</button>
+
+      <div class="hr"></div>
+      <a class="btn btnGold btnFull" href="live.html" target="_blank">فتح صفحة البث (للجمهور)</a>
+      <a class="btn btnFull" href="display.html" target="_blank" style="margin-top:10px;">فتح شاشة العرض (Display)</a>
+    </div>
+
+    <div class="card cardPad">
+      <h2 class="h2">القطعة الحالية</h2>
+      <div class="hr"></div>
+
+      <div class="field">
+        <label class="label">اختيار القطعة</label>
+        <select id="itemSelect" class="input"></select>
+      </div>
+
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <button id="startBtn" class="btn btnGold" style="flex:1;">بدء القطعة (1:30)</button>
+        <button id="soldBtn" class="btn btnDanger" style="flex:1;">تثبيت: مباع</button>
+      </div>
+
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;">
+        <button id="prevBtn" class="btn" style="flex:1;">السابق</button>
+        <button id="nextBtn" class="btn" style="flex:1;">التالي</button>
+      </div>
+
+      <div class="hr"></div>
+
+      <h3 class="h2">الحالة الآن</h3>
+      <div class="kv" style="margin-top:10px;">
+        <div class="kvBox">
+          <div class="k">القطعة</div>
+          <div class="v" id="stItem">—</div>
+        </div>
+        <div class="kvBox">
+          <div class="k">السعر</div>
+          <div class="v" id="stPrice">—</div>
+        </div>
+      </div>
+
+      <div class="kv" style="margin-top:10px;">
+        <div class="kvBox">
+          <div class="k">آخر مزايد</div>
+          <div class="v" id="stLast">—</div>
+        </div>
+        <div class="kvBox">
+          <div class="k">الوقت</div>
+          <div class="v" id="stTimer">—</div>
+        </div>
+      </div>
+
+      <button id="resetBtn" class="btn btnFull" style="margin-top:12px;">إعادة ضبط (إيقاف القطعة)</button>
+    </div>
+
+  </div>
+</div>
+
+<script src="brand.js"></script>
+<script src="items.js"></script>
+<script src="script.js"></script>
+<script>
+(function adminGate(){
+  const KEY = "hoa_admin_ok";
+  const PASS = "06809"; // ✨ غيّريه لأي كلمة/رقم
+
+  // إذا سبق وفتحتي الإدارة على نفس الجهاز، لا يعيد السؤال
+  const ok = sessionStorage.getItem(KEY) === "1";
+  if(ok) return;
+
+  const entered = prompt("رمز دخول الإدارة:");
+  if(entered === PASS){
+    sessionStorage.setItem(KEY, "1");
+    return;
+  }
+
+  // إذا خطأ أو cancel
+  alert("رمز غير صحيح.");
+  window.location.href = "index.html";
+})();
+</script>
+
+</body>
+</html>

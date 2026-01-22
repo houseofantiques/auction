@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>بيت التحفيات | المزايدات المسبقة</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800;900&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="brand">
+      <div class="brandMark"></div>
+      <div class="brandText">
+        <div class="title">بيت التحفيات</div>
+        <div class="sub">المزايدات المسبقة قبل البث</div>
+      </div>
+    </div>
+
+    <span id="paddleBadge" class="badge"></span>
+  </div>
+
+  <!-- Intro -->
+  <div class="card cardPad" style="margin-top:16px;">
+    <h1 class="h1">المزايدة المسبقة</h1>
+    <p class="p">
+      يمكنك تقديم مزايدة مسبقة على القطع المعروضة أدناه.
+      عند بدء البث المباشر، سيبدأ السعر من أعلى مزايدة مسجلة.
+    </p>
+  </div>
+
+  <!-- Items -->
+  <div id="itemsGrid" style="margin-top:18px; display:grid; gap:16px;"></div>
+
+</div>
+
+<!-- JS -->
+<script src="brand.js"></script>
+<script src="items.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
