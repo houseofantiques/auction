@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>بيت التحفيات | اختيار المشاركة</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="page">
+
+  <div class="header">
+    <div class="brand">
+      <div class="brandMark"></div>
+      <div class="brandText">
+        <div class="title">بيت التحفيات</div>
+        <div class="sub">اختيار طريقة المشاركة</div>
+      </div>
+    </div>
+    <span id="paddleBadge" class="badge"></span>
+  </div>
+
+  <div class="loginWrap">
+    <div class="card cardPad">
+
+      <h1 class="h1">اختر طريقة المشاركة</h1>
+      <p class="p">يرجى اختيار الطريقة المناسبة للمشاركة في المزاد.</p>
+
+      <div style="margin-top:16px;">
+        <button class="btn btnGold btnFull" onclick="goPrebid()">
+          المزايدة المسبقة
+        </button>
+        <div class="noteText" style="margin-top:6px;">
+          تتيح لك تسجيل مزايدتك على القطع قبل بدء البث المباشر.
+          سيتم اعتماد أعلى مزايدة مسجلة عند انطلاق المزاد.
+        </div>
+      </div>
+
+      <div style="margin-top:20px;">
+        <button class="btn btnFull" onclick="goLive()">
+          الدخول إلى المزايدة المباشرة
+        </button>
+        <div class="noteText" style="margin-top:6px;">
+          للمشاركة في المزاد أثناء البث المباشر ورفع السعر لحظيًا.
+        </div>
+      </div>
+
+      <a href="index.html" class="btn btnSub btnFull" style="margin-top:16px;">
+        رجوع
+      </a>
+
+    </div>
+  </div>
+
+</div>
+
+<script src="brand.js"></script>
+<script src="script.js"></script>
+
+<script>
+function goPrebid(){ window.location.href = "prebid.html"; }
+function goLive(){ window.location.href = "live.html"; }
+</script>
+
+</body>
+</html>
